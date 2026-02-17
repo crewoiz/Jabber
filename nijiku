@@ -243,7 +243,8 @@ footer {
     </div>
 
     <h1><span id="typed"></span><span class="cursor"></span></h1>
-    <p class="subtitle">glitch // noise // neural distortion</p>
+    <p class="subtitle">he/him • mexican • bi aroace</p>
+ <p class="subtitle">im an evil pervert with a gambling addiction who goes by too many different names #sorry</p>
 
     <details>
         <summary>MAIN INTERESTS</summary>
@@ -258,22 +259,22 @@ footer {
     </details>
 
     <details>
-        <summary>NOTES</summary>
+        <summary>EXTRA</summary>
         <div class="details-content">
-            - response delay may occur<br>
-            - fiction remains fiction<br>
-            - high obsession levels detected
+            - i reply months late sometimes<br>
+            - i am extremely mentally ill and it is apparent<br>
+            - fiction is fiction
         </div>
     </details>
 
-    <img src="your-gif.gif" class="notes-gif">
+    <img src="ezgif-68c020f40189d800.gif" class="notes-gif">
 
-    <a href="https://myfigurecollection.net/" target="_blank" class="link-button">
+    <a href="https://myfigurecollection.net/profile/Nosionix" target="_blank" class="link-button">
         MYFIGURECOLLECTION
     </a>
 
     <div class="music-container">
-        <div class="now-playing">NOW PLAYING // DISTORTION_TRACK_01</div>
+        <div class="now-playing">NOW PLAYING // Dramatique?</div>
 
         <div class="music-visual" id="visualizer">
             <div class="bar"></div>
@@ -287,7 +288,7 @@ footer {
         <button class="music-button" onclick="toggleMusic()">UNMUTE</button>
 
         <audio id="bgMusic" autoplay loop muted>
-            <source src="your-music.mp3" type="audio/mpeg">
+            <source src="dramatique.mp3" type="audio/mpeg">
         </audio>
     </div>
 
@@ -306,7 +307,7 @@ window.addEventListener("load", function() {
 });
 
 /* TYPING */
-const text = "JABBER WONGER";
+const text = "CREW";
 const typed = document.getElementById("typed");
 let i = 0;
 function typeEffect() {
