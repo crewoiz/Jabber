@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jabber Wonger</title>
+<title>@crew</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
@@ -238,7 +238,8 @@ footer {
 <div class="card">
 
     <div class="profile-container">
-        <img src="profile-icon.jpg" class="profile-icon">
+        <img src="Screenshot_20260217_033604_Chrome.jpg
+" class="profile-icon">
     </div>
 
     <h1><span id="typed"></span><span class="cursor"></span></h1>
@@ -249,10 +250,10 @@ footer {
         <div class="details-content">
             DRAMAtical Murder, Durarara!!, My Hero Academia, Yu-Gi-Oh,
             Angels of Death, Banana Fish, Tokyo Ghoul, Yuri on Ice,
-            Persona, Danganronpa, Gachiakuta, Blue Lock,
+            Persona, Hundred Line: Last Defense Academy, Promare, Your Turn To Die, Milky☆Subway, Danganronpa, Osomatsu San, Gachiakuta, Blue Lock, Tribe Nine,
             The Summer Hikaru Died, Dandadan, Sakamoto Days,
-            Lord of Heroes, Squid Game, Trigun, Stranger Things,
-            Kpop, Movies, Music, Yaoi/BL
+            Lord of Heroes, Squid Game, Panty & Stocking, Carnby Kim, Trigun, Boys Planet, Physical: 100, Stranger Things,
+            Kpop, Reality TV, Movies, Music, Yaoi/BL
         </div>
     </details>
 
