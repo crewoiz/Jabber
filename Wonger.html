@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jabber Wonger</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* LOADING SCREEN */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: #00f7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Share Tech Mono', monospace;
+    z-index: 9999;
+    text-align: center;
+}
+
+.loader-text {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* CYBER BACKGROUND */
+body {
+    background: radial-gradient(circle at 50% 20%, #0f0f1f, #000);
+    color: #00f7ff;
+    font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,0,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+.card {
+    background: rgba(10, 10, 20, 0.85);
+    border: 1px solid #00f7ff;
+    padding: 35px;
+    max-width: 550px;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 25px rgba(0,247,255,0.4);
+}
+
+/* PROFILE ICON */
+.profile-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.profile-icon {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff00c8;
+    box-shadow: 0 0 20px rgba(255,0,200,0.7);
+}
+
+/* TYPING TITLE */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 4px;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #ff00c8;
+    text-shadow: 0 0 10px #ff00c8, 0 0 20px #00f7ff;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background: #00f7ff;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #00f7ff;
+}
+
+/* COLLAPSIBLE */
+details {
+    border: 1px solid #00f7ff;
+    margin-top: 20px;
+    background: rgba(0,0,0,0.6);
+}
+
+summary {
+    padding: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    color: #ff00c8;
+}
+
+summary::marker { display: none; }
+
+summary::after {
+    content: "+";
+    position: absolute;
+    right: 15px;
+}
+
+details[open] summary::after {
+    content: "−";
+}
+
+.details-content {
+    padding: 15px;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #c2ffff;
+    border-top: 1px solid #00f7ff;
+}
+
+.link-button {
+    display: block;
+    margin-top: 25px;
+    padding: 12px;
+    text-decoration: none;
+    border: 1px solid #00f7ff;
+    color: #00f7ff;
+    text-align: center;
+    transition: 0.3s;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.link-button:hover {
+    background: #00f7ff;
+    color: black;
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.7rem;
+    opacity: 0.6;
+    text-align: center;
+    color: #ff00c8;
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+    <div class="loader-text">
+        INITIALIZING SYSTEM...<br>
+        LOADING DISTORTION MODULE...<br>
+        CONNECTING TO NETWORK...<br>
+        <br>
+        ACCESS GRANTED
+    </div>
+</div>
+
+<div class="card">
+
+    <div class="profile-container">
+        <img src="profile-icon.jpg" alt="Profile Icon" class="profile-icon">
+    </div>
+
+    <h1><span id="typed"></span><span class="cursor"></span></h1>
+    <p class="subtitle">neon // noise // digital distortion</p>
+
+    <details>
+        <summary>MAIN INTERESTS</summary>
+        <div class="details-content">
+            DRAMAtical Murder, Durarara!!, My Hero Academia, Yu-Gi-Oh,
+            Angels of Death, Banana Fish, Tokyo Ghoul, Yuri on Ice,
+            Persona, Danganronpa, Gachiakuta, Blue Lock,
+            The Summer Hikaru Died, Dandadan, Sakamoto Days,
+            Lord of Heroes, Squid Game, Trigun, Stranger Things,
+            Kpop, Movies, Music, Yaoi/BL
+        </div>
+    </details>
+
+    <details>
+        <summary>NOTES</summary>
+        <div class="details-content">
+            - response delay may occur<br>
+            - fiction remains fiction<br>
+            - high obsession levels detected<br>
+            - proceed at your own risk
+        </div>
+    </details>
+
+    <a href="https://myfigurecollection.net/" target="_blank" class="link-button">
+        MYFIGURECOLLECTION
+    </a>
+
+    <footer>
+        // system online • distortion active
+    </footer>
+
+</div>
+
+<script>
+/* LOADER FADE */
+window.addEventListener("load", function() {
+    setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+        document.body.classList.add("loaded");
+    }, 2500);
+});
+
+/* TYPING EFFECT */
+const text = "JABBER WONGER";
+const typed = document.getElementById("typed");
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        typed.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 100);
+    }
+}
+
+setTimeout(typeEffect, 2800);
+</script>
+
+</body>
+</html>
