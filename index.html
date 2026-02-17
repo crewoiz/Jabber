@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jabber Wonger</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #e0002a;
+    font-family: 'Share Tech Mono', monospace;
+    display: flex;
+    justify-content: center;
+    padding: 40px 15px;
+}
+
+.card {
+    background: #0a0a0a;
+    border: 1px solid #e0002a;
+    padding: 35px;
+    max-width: 550px;
+    width: 100%;
+    box-shadow: 0 0 25px rgba(224,0,42,0.25);
+}
+
+/* PROFILE ICON */
+.profile-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.profile-icon {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0002a;
+    box-shadow: 0 0 15px rgba(224,0,42,0.5);
+    transition: 0.3s;
+}
+
+.profile-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(224,0,42,0.8);
+}
+
+h1 {
+    font-family: 'Unbounded', sans-serif;
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px #e0002a;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* COLLAPSIBLE SECTIONS */
+details {
+    border: 1px solid #e0002a;
+    margin-top: 20px;
+    background: #0a0a0a;
+}
+
+summary {
+    padding: 12px;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+}
+
+summary::marker {
+    display: none;
+}
+
+summary::after {
+    content: "+";
+    position: absolute;
+    right: 15px;
+    transition: 0.3s;
+}
+
+details[open] summary::after {
+    content: "−";
+}
+
+.details-content {
+    padding: 15px;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #ccc;
+    border-top: 1px solid #e0002a;
+}
+
+/* MEDIA */
+.media {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.media img {
+    max-width: 100%;
+    border: 1px solid #e0002a;
+    margin-top: 10px;
+}
+
+/* LINK BUTTON */
+.link-button {
+    display: block;
+    margin-top: 25px;
+    padding: 12px;
+    text-decoration: none;
+    border: 1px solid #e0002a;
+    color: white;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.link-button:hover {
+    background: #e0002a;
+    color: black;
+    box-shadow: 0 0 10px #e0002a;
+}
+
+/* AUDIO */
+audio {
+    margin-top: 20px;
+    width: 100%;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- PROFILE ICON -->
+    <div class="profile-container">
+        <img src="profile-icon.jpg" alt="Profile Icon" class="profile-icon">
+    </div>
+
+    <h1>JABBER WONGER</h1>
+    <p class="subtitle">error // distortion // obsession</p>
+
+    <!-- MAIN INTERESTS -->
+    <details>
+        <summary>MAIN INTERESTS</summary>
+        <div class="details-content">
+            DRAMAtical Murder, Durarara!!, My Hero Academia, Yu-Gi-Oh,
+            Angels of Death, Banana Fish, Tokyo Ghoul, Yuri on Ice,
+            Persona, Danganronpa, Gachiakuta, Blue Lock,
+            The Summer Hikaru Died, Dandadan, Sakamoto Days,
+            Lord of Heroes, Squid Game, Trigun, Stranger Things,
+            Kpop, Movies, Music, Yaoi/BL
+        </div>
+    </details>
+
+    <!-- NOTES -->
+    <details>
+        <summary>NOTES</summary>
+        <div class="details-content">
+            - i reply months late sometimes<br>
+            - fiction is fiction<br>
+            - expect unhinged posting<br>
+            - heavily fixated, enter at your own risk
+        </div>
+    </details>
+
+    <!-- STATIC IMAGE -->
+    <div class="media">
+        <img src="your-image.jpg" alt="Extra Image">
+    </div>
+
+    <!-- GIF -->
+    <div class="media">
+        <img src="your-gif.gif" alt="Animated GIF">
+    </div>
+
+    <!-- MYFIGURECOLLECTION -->
+    <a href="https://myfigurecollection.net/" target="_blank" class="link-button">
+        MyFigureCollection
+    </a>
+
+    <!-- MUSIC -->
+    <audio id="bg-music" autoplay loop controls>
+        <source src="your-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <footer>
+        // distortion archived
+    </footer>
+
+</div>
+
+<script>
+const music = document.getElementById("bg-music");
+music.volume = 0.6;
+
+// Autoplay fallback
+document.addEventListener("click", () => {
+    music.play();
+});
+</script>
+
+</body>
+</html>
